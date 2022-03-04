@@ -82,12 +82,11 @@ class MainFragment : Fragment(), PopupClick {
                         contact.contact_number =
                             bindingDialog.etNumber.text.toString()
                         dbHelper.updateContact(contact)
-                        list[position - 1] = contact        // IndexBoundOfException bergani uchun [position-1] qildim
+                        list[position] = contact        // IndexBoundOfException bergani uchun [position-1] qildim
                         contactAdapter.notifyItemChanged(position)
                         Toast.makeText(requireActivity(), "Submitted", Toast.LENGTH_SHORT).show()
                         customDialog.dismiss()
                     }
-
                     customDialog.show()
                 }
 
@@ -111,7 +110,6 @@ class MainFragment : Fragment(), PopupClick {
                         onResume()
                         customDialog.dismiss()
                     }
-
                     customDialog.show()
                 }
             }
